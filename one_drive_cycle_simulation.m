@@ -6,7 +6,7 @@ n_cell=10;%number of cells
 SOC_0=0;%initial cell SOC
 SOC_end=0.7;%Final pack SOC after charging
 Uphase=2.5*n_cell;%phase voltage
-Tlimit=3600;%time constraint in seconds
+Tlimit=3600*1.5;%time constraint in seconds
 deltat=3600*6;%relaxation time in seconds
 m=6;%SOC division number during CV stage
 R0=0.01;%Internal resistance
@@ -143,7 +143,7 @@ end
 
 %% Figures
 f1 = figure(1);
-f1.Position = [100 100 500 380];
+f1.Position = [100 100 400 320];
 
 ax = gca;          % grab axes handle once (creates axes if needed)
 hold(ax,'on');
@@ -157,7 +157,7 @@ ax.ColorOrderIndex = 1;
 
 labels=strings(1,n_cell);
 for j=1:n_cell
-    plot(t(1:i)/3600,100*Qplotnew(j,1:i)/3600/Qmax1(j))
+    plot(t(1:i)/3600,Qplotnew(j,1:i)/3600,LineWidth=1)
     labels(j)=append('Cell ',int2str(j));
 end
 x1 = Tlimit_h;  % your x location
@@ -166,13 +166,13 @@ x2 = (deltat+Tlimit)/3600;  % your x location
 xline(x2, 'r--', 'LineWidth', 2);
 
 xlabel('Time (h)','FontSize',14)
-ylabel('SOC (%)','FontSize',14)
+ylabel('Remaining Capacity (Ah)','FontSize',14)
 
 legend(labels,Location="northeast",FontSize=12)
 xlim([0 8+deltat/3600])
-ylim([0 100])
+ylim([0 2])
 grid on
-%exportgraphics(f1,'one_cycle.png','Resolution',900)
+exportgraphics(f1,'one_cycle2.png','Resolution',600)
 %% functions
 function OCV_o = OCV1(SOC)
     OCV_o=OCV(SOC, 1);
