@@ -1,2 +1,2 @@
-# Model-Agnostic Energy Throughput Control for Range and Lifetime Extension of Electric Vehicles via Cell-Level Inverters
-Codes for the paper entitled "Model-Agnostic Energy Throughput Control for Range and Lifetime Extension of Electric Vehicles via Cell-Level Inverters." All codes are directly runnable. Running the code allows you to reproduce all the figures in the paper.
+# Degradation-Model-Agnostic Energy Throughput Control for EV Range Preservation and Battery Lifetime Extension via Cell-Level Inverters
+Codes for the paper entitled "Degradation-Model-Agnostic Energy Throughput Control for EV Range Preservation and Battery Lifetime Extension via Cell-Level Inverters." All codes are directly runnable. Running the code allows you to reproduce Figures 7 and 8 in the paper.
