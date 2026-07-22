@@ -81,7 +81,7 @@ cfg.collectRuntimeDiagnostics = true;
 cfg.runtimeOutputPrefix = "runtime_summary";
 
 %% Load Data
-DATA = csvread("data_scott.csv",1,0);
+DATA = csvread("data_tesla.csv",1,0);
 original_time=3600*24*cfg.initialAgingOffsetDays;
 stepnum=length(DATA);
 stepcSOC=[100;DATA(:,6)]/100;
